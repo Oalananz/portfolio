@@ -52,8 +52,9 @@ export default function Navbar() {
           {/* Logo */}
           <button
             onClick={() => handleClick('#hero')}
-            className="font-mono text-lg font-bold tracking-tight text-primary-400 hover:text-primary-300 transition-colors"
+            className="flex items-center gap-2 font-mono text-lg font-bold tracking-tight text-primary-400 hover:text-primary-300 transition-colors"
           >
+            <img src="/logo.webp" alt="Logo" className="h-8 w-8 rounded-full object-cover" />
             &lt;{PERSONAL_INFO.firstName} /&gt;
           </button>
 
