@@ -8,6 +8,7 @@ import Projects from './sections/Projects';
 import GitHubSection from './sections/GitHubSection';
 import Certifications from './sections/Certifications';
 import HolyGraph from './sections/HolyGraph';
+import GraduationProject from './sections/GraduationProject';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 
@@ -23,6 +24,7 @@ export default function App() {
         <Certifications />
         <Projects />
         <HolyGraph />
+        <GraduationProject />
         <GitHubSection />
         <Contact />
       </main>

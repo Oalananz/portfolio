@@ -25,6 +25,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'Certifications', href: '#certifications' },
   { label: 'Projects', href: '#projects' },
   { label: '42 Graph', href: '#holygraph' },
+  { label: 'Graduation', href: '#graduation' },
   { label: 'GitHub', href: '#github' },
   { label: 'Contact', href: '#contact' },
 ];

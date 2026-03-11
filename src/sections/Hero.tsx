@@ -90,8 +90,7 @@ export default function Hero() {
           </button>
           <a
             href={PERSONAL_INFO.cvUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            download="Osamah-Alananzeh-CV.pdf"
             className="inline-flex items-center gap-2 rounded-xl border border-gray-700 px-7 py-3.5 font-semibold text-gray-300 hover:border-accent-500/50 hover:text-white hover:bg-white/5 transition-all duration-300"
           >
             <FileDown size={16} />
