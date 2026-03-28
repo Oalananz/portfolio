@@ -105,11 +105,11 @@ export const FEATURED_PROJECTS = [
     github: 'https://github.com/Oalananz/philosophers',
   },
   {
-    title: 'C++ Modules (00–09)',
+    title: 'WebServ',
     description:
-      'A comprehensive series of C++ projects covering OOP, polymorphism, templates, STL containers, exceptions, and advanced C++ features following the 42 curriculum.',
-    technologies: ['C++', 'OOP', 'STL', 'Templates'],
-    github: 'https://github.com/Oalananz/CPP_MODULES_42',
+      'An event-driven HTTP server in C++ built from scratch, featuring request parsing, static file serving, CGI support, file upload and deletion, and concurrent client handling using poll().',
+    technologies: ['C++', 'HTTP', 'poll()', 'CGI', 'Sockets'],
+    github: 'https://github.com/Qhatahet/WebServ',
   },
 ];
 

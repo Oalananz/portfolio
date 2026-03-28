@@ -124,12 +124,12 @@ const GRAPH_NODES: GraphNode[] = [
   },
   {
     id: 'cpp_modules',
-    name: 'CPP Modules',
+    name: 'WebServ',
     circle: 4,
     status: 'completed',
-    description: 'C++ fundamentals from 00 to 09 — OOP, polymorphism, templates, STL, and more.',
+    description: 'An event-driven HTTP server in C++ built from scratch with request parsing, CGI support, file handling, and concurrent client management using poll().',
     language: 'C++',
-    github: 'https://github.com/Oalananz/CPP_MODULES_42',
+    github: 'https://github.com/Qhatahet/WebServ',
     dependencies: ['minishell'],
   },
   {
@@ -153,11 +153,12 @@ const GRAPH_NODES: GraphNode[] = [
   },
   {
     id: 'webserv',
-    name: 'Webserv',
+    name: 'WebServ',
     circle: 5,
-    status: 'in-progress',
-    description: 'HTTP server implementation — handling requests, responses, and CGI.',
+    status: 'completed',
+    description: 'HTTP server implementation in C++ with request parsing, static file serving, CGI handling, and concurrent client management.',
     language: 'C++',
+    github: 'https://github.com/Qhatahet/WebServ',
     dependencies: ['cpp_modules', 'netpractice'],
   },
   // Circle 6
