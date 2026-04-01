@@ -3,18 +3,18 @@ import type { NavLink, SkillCategory, TechItem } from '../types';
 export const PERSONAL_INFO = {
   name: 'Osamah Alananzeh',
   firstName: 'Osamah',
-  title: 'Computer Engineer | 42 Amman Student',
+  title: 'Computer Engineer | Backend Developer',
   email: 'osamahalananzeh@gmail.com',
   github: 'https://github.com/Oalananz',
   githubUsername: 'Oalananz',
   linkedin: 'https://www.linkedin.com/in/osamah-alananzeh',
   location: 'Amman, Jordan',
   cvUrl: '/Osamah-Alananzeh-CV.pdf',
-  bio: `I'm a Computer Engineer and 42 Amman student passionate about building efficient, elegant software solutions. My journey spans from low-level systems programming in C to modern web development, with a deep focus on algorithmic thinking and clean architecture.`,
+  bio: `I'm a Computer Engineering graduate and backend/systems engineer focused on building reliable, high-performance software. I work across low-level systems programming, networking, concurrent applications, and backend architecture with a strong focus on performance and clean design.`,
   aboutParagraphs: [
-    `As a Computer Engineering graduate and current student at 42 Amman, I bring a unique blend of academic foundation and practical, project-based learning. At 42, I've embraced the peer-to-peer methodology — mastering complex concepts through collaboration, code review, and real-world challenges.`,
-    `My expertise lies in systems programming, where I've built everything from custom shells (Minishell) to raycasting engines (Cub3D) and multi-threaded synchronization solutions (Dining Philosophers). I'm equally passionate about web technologies, database systems, and creating tools that solve real problems.`,
-    `I won 1st place at Shadow Code, a competitive programming event, and I hold certifications from Google, IBM, and other industry leaders. I'm always looking to push boundaries and learn new technologies.`,
+    `As a Computer Engineering graduate from Al-Balqa Applied University and a current 42 Amman student, I combine academic depth with intensive project-based training. At 42, I use the peer-to-peer model to sharpen collaboration, code review, and problem solving through real engineering challenges.`,
+    `My core focus is backend and systems engineering. I build high-performance software in C/C++, including Unix shells (Minishell), raycasting engines (Cub3D), HTTP servers (Webserv), and multithreaded systems (Dining Philosophers), while also designing REST APIs and scalable backend workflows.`,
+    `I earned 1st place in Shadow Code and hold certifications from KodeKloud, freeCodeCamp + Microsoft, and ProgrammingAdvices. I enjoy solving complex system-level problems and continuously learning technologies that improve reliability, speed, and developer experience.`,
   ],
 };
 
@@ -73,10 +73,14 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     skills: [
       { name: 'Git / GitHub', level: 90 },
       { name: 'Docker', level: 70 },
+      { name: 'Postman', level: 80 },
+      { name: 'cURL', level: 80 },
+      { name: 'Siege', level: 70 },
       { name: 'VS Code', level: 90 },
       { name: 'Vim / Neovim', level: 80 },
       { name: 'Makefile / CMake', level: 85 },
       { name: 'PostgreSQL', level: 70 },
+      { name: 'pgAdmin 4', level: 75 },
       { name: 'MongoDB', level: 65 },
     ],
   },
@@ -142,6 +146,9 @@ export const TECH_ITEMS: TechItem[] = [
   { name: 'React',      iconUrl: `${DI}/react/react-original.svg`,                 category: 'Tools & Frameworks' },
   { name: 'Tailwind',   iconUrl: `${DI}/tailwindcss/tailwindcss-original.svg`,     category: 'Tools & Frameworks' },
   { name: 'Node.js',    iconUrl: `${DI}/nodejs/nodejs-original.svg`,               category: 'Tools & Frameworks' },
+  { name: 'Postman',    iconUrl: `${DI}/postman/postman-original.svg`,             category: 'Tools & Frameworks' },
+  { name: 'cURL',       iconUrl: `https://cdn.simpleicons.org/curl/073551`,         category: 'Tools & Frameworks' },
+  { name: 'Siege',      iconUrl: `https://img.icons8.com/fluency/96/console.png`,   category: 'Tools & Frameworks' },
   { name: 'Visual Studio', iconUrl: `${DI}/visualstudio/visualstudio-original.svg`, category: 'Tools & Frameworks' },
   { name: 'PyCharm',    iconUrl: `${DI}/pycharm/pycharm-original.svg`,             category: 'Tools & Frameworks' },
   { name: 'IntelliJ IDEA', iconUrl: `${DI}/intellij/intellij-original.svg`,         category: 'Tools & Frameworks' },
@@ -151,6 +158,7 @@ export const TECH_ITEMS: TechItem[] = [
   { name: 'PostgreSQL', iconUrl: `${DI}/postgresql/postgresql-original.svg`,        category: 'Databases' },
   { name: 'MongoDB',    iconUrl: `${DI}/mongodb/mongodb-original.svg`,             category: 'Databases' },
   { name: 'MySQL',      iconUrl: `${DI}/mysql/mysql-original.svg`,                 category: 'Databases' },
+  { name: 'pgAdmin 4',  iconUrl: '/pgadmin4-logo.svg',                                category: 'Databases' },
   { name: 'SQL',        iconUrl: `${DI}/azuresqldatabase/azuresqldatabase-original.svg`, category: 'Databases' },
   { name: 'SQL Server', iconUrl: `${DI}/microsoftsqlserver/microsoftsqlserver-original.svg`, category: 'Databases' },
 ];
@@ -164,45 +172,59 @@ export interface Certification {
   issuer: string;
   date: string;
   link?: string;
+  image?: string;
   highlight?: string;
 }
 
 export const CERTIFICATIONS: Certification[] = [
   {
     title: 'Shadow Code — Problem Solving Track',
-    issuer: 'IEEE Student Branch, Al-Balqa Applied University',
+    issuer: 'IEEE BAU Computer Society',
     date: 'May 2025',
+    image: '/ieee-shadow-code.jpg',
     highlight: '1st Place',
+  },
+  {
+    title: 'Docker Training Course for the Absolute Beginner',
+    issuer: 'KodeKloud',
+    date: '2026',
+    link: 'https://learn.kodekloud.com/user/certificate/c19fc122-0e46-4740-bc6e-e2d72b929a10',
   },
   {
     title: 'Foundational C# with Microsoft',
     issuer: 'freeCodeCamp + Microsoft',
     date: 'Nov 2025',
+    link: 'https://freecodecamp.org/certification/fcc-20995f0d-6358-4b91-8075-56a1209c0a79/foundational-c-sharp-with-microsoft',
   },
   {
     title: 'C# Level 1',
     issuer: 'ProgrammingAdvices',
     date: 'Dec 2025',
+    link: 'https://programmingadvices.com/courses/2100316/certificate',
   },
   {
     title: 'Database Level 1 — SQL (Concepts & Practice)',
     issuer: 'ProgrammingAdvices',
     date: 'Feb 2026',
+    link: 'https://programmingadvices.com/courses/2076120/certificate',
   },
   {
     title: 'OOP As It Should Be In C#',
     issuer: 'ProgrammingAdvices',
     date: 'Feb 2026',
+    link: 'https://programmingadvices.com/courses/2057756/certificate',
   },
   {
     title: 'Database — SQL (Projects & Practice)',
     issuer: 'ProgrammingAdvices',
     date: 'Feb 2026',
+    link: 'https://programmingadvices.com/courses/2040664/certificate',
   },
   {
     title: 'C# & Database Connectivity',
     issuer: 'ProgrammingAdvices',
     date: 'Feb 2026',
+    link: 'https://programmingadvices.com/courses/2012538/certificate',
   },
 ];
 

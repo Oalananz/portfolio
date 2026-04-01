@@ -1,4 +1,5 @@
-import { Award, ExternalLink, Calendar } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Award, ExternalLink, Calendar, X } from 'lucide-react';
 import SectionWrapper from '../components/SectionWrapper';
 import SectionHeading from '../components/SectionHeading';
 import { useInView } from '../hooks/useInView';
@@ -6,6 +7,34 @@ import { CERTIFICATIONS } from '../utils/constants';
 
 export default function Certifications() {
   const [ref, visible] = useInView(0.05);
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const [previewTitle, setPreviewTitle] = useState<string>('');
+
+  useEffect(() => {
+    if (!previewImage) {
+      return;
+    }
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setPreviewImage(null);
+      }
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [previewImage]);
+
+  const openPreview = (image: string, title: string) => {
+    setPreviewImage(image);
+    setPreviewTitle(title);
+  };
+
+  const closePreview = () => {
+    setPreviewImage(null);
+  };
 
   return (
     <SectionWrapper>
@@ -64,12 +93,49 @@ export default function Certifications() {
                         Verify
                       </a>
                     )}
+                    {!cert.link && cert.image && (
+                      <button
+                        type="button"
+                        onClick={() => openPreview(cert.image, cert.title)}
+                        className="flex items-center gap-1 text-primary-400/70 hover:text-primary-400 transition-colors"
+                      >
+                        <ExternalLink size={12} />
+                        Verify
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        {previewImage && (
+          <div
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4"
+            onClick={closePreview}
+          >
+            <div
+              className="relative max-h-[90vh] w-full max-w-5xl rounded-2xl border border-white/10 bg-surface-900/95 p-3"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={closePreview}
+                className="absolute right-3 top-3 rounded-md bg-black/60 p-1 text-white hover:bg-black/80"
+                aria-label="Close preview"
+              >
+                <X size={18} />
+              </button>
+
+              <img
+                src={previewImage}
+                alt={`${previewTitle} certificate preview`}
+                className="max-h-[82vh] w-full rounded-xl bg-white object-contain"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </SectionWrapper>
   );

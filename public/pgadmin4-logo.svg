@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="pgAdmin 4 logo">
+  <defs>
+    <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3f74b5"/>
+      <stop offset="100%" stop-color="#2b4f7d"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="url(#pg)"/>
+  <circle cx="44" cy="44" r="18" fill="#ffffff" opacity="0.15"/>
+  <path d="M38 84c0-14 10-24 24-24h28v12H62c-7 0-12 5-12 12v6H38z" fill="#ffffff"/>
+  <path d="M90 56h12v34H90z" fill="#c8dbf2"/>
+  <text x="64" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff">pgAdmin</text>
+</svg>
