@@ -3,7 +3,7 @@ import type { NavLink, SkillCategory, TechItem } from '../types';
 export const PERSONAL_INFO = {
   name: 'Osamah Alananzeh',
   firstName: 'Osamah',
-  title: 'Computer Engineer | Backend Developer',
+  title: 'Computer Engineer | Backend Developer | 42 Amman Student',
   email: 'osamahalananzeh@gmail.com',
   github: 'https://github.com/Oalananz',
   githubUsername: 'Oalananz',

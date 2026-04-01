@@ -96,7 +96,11 @@ export default function Certifications() {
                     {!cert.link && cert.image && (
                       <button
                         type="button"
-                        onClick={() => openPreview(cert.image, cert.title)}
+                        onClick={() => {
+                          if (cert.image) {
+                            openPreview(cert.image, cert.title);
+                          }
+                        }}
                         className="flex items-center gap-1 text-primary-400/70 hover:text-primary-400 transition-colors"
                       >
                         <ExternalLink size={12} />
