@@ -23,6 +23,15 @@ export interface GitHubUser {
   bio: string | null;
 }
 
+export interface GitHubActivity {
+  id: string;
+  type: string;
+  action: string;
+  repoName: string;
+  repoUrl: string;
+  createdAt: string;
+}
+
 export interface Skill {
   name: string;
   level: number; // 0-100

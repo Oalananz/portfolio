@@ -48,14 +48,14 @@ export default function Certifications() {
           {CERTIFICATIONS.map((cert, i) => (
             <div
               key={cert.title}
-              className={`group relative rounded-2xl border border-white/[0.06] bg-surface-900/40 p-6 card-hover transition-all duration-600 ${
-                visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`card-hover group relative rounded-2xl border border-border-soft bg-bg-surface/86 p-6 transition-all duration-600 ${
+                visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
               }`}
               style={{ transitionDelay: `${Math.min(i * 80, 500)}ms` }}
             >
               {/* Highlight badge for awards */}
               {cert.highlight && (
-                <div className="absolute -top-3 right-4 rounded-full bg-yellow-500/90 px-3 py-0.5 text-xs font-bold text-gray-900 shadow-lg shadow-yellow-500/20">
+                <div className="absolute -top-3 right-4 rounded-full border border-accent-500/45 bg-accent-500/12 px-3 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-accent-400">
                   {cert.highlight}
                 </div>
               )}
@@ -64,20 +64,21 @@ export default function Certifications() {
                 <div
                   className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${
                     cert.highlight
-                      ? 'bg-yellow-500/15 text-yellow-400'
-                      : 'bg-primary-500/10 text-primary-400'
-                  } group-hover:scale-110 transition-transform duration-300`}
+                      ? 'border border-accent-500/35 bg-accent-500/10 text-accent-400'
+                      : 'border border-primary-500/25 bg-primary-500/10 text-primary-400'
+                  } transition-transform duration-300 group-hover:scale-105`}
                 >
                   <Award size={22} />
                 </div>
 
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-sm font-semibold text-white leading-snug group-hover:text-primary-300 transition-colors">
+                  <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.14em] text-text-muted">certification</p>
+                  <h3 className="text-sm font-semibold leading-snug text-text-main transition-colors group-hover:text-primary-300">
                     {cert.title}
                   </h3>
-                  <p className="mt-1 text-xs text-gray-500">{cert.issuer}</p>
+                  <p className="mt-1 text-xs text-text-muted">{cert.issuer}</p>
 
-                  <div className="mt-3 flex items-center gap-3 text-xs text-gray-500">
+                  <div className="mt-3 flex items-center gap-3 text-xs text-text-muted">
                     <span className="flex items-center gap-1">
                       <Calendar size={12} />
                       {cert.date}
@@ -87,7 +88,7 @@ export default function Certifications() {
                         href={cert.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-primary-400/70 hover:text-primary-400 transition-colors"
+                        className="flex items-center gap-1 text-primary-400/80 transition-colors hover:text-primary-300"
                       >
                         <ExternalLink size={12} />
                         Verify
@@ -101,7 +102,7 @@ export default function Certifications() {
                             openPreview(cert.image, cert.title);
                           }
                         }}
-                        className="flex items-center gap-1 text-primary-400/70 hover:text-primary-400 transition-colors"
+                        className="flex items-center gap-1 text-primary-400/80 transition-colors hover:text-primary-300"
                       >
                         <ExternalLink size={12} />
                         Verify
@@ -120,13 +121,13 @@ export default function Certifications() {
             onClick={closePreview}
           >
             <div
-              className="relative max-h-[90vh] w-full max-w-5xl rounded-2xl border border-white/10 bg-surface-900/95 p-3"
+              className="relative max-h-[90vh] w-full max-w-5xl rounded-2xl border border-border-soft bg-bg-surface/95 p-3"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 type="button"
                 onClick={closePreview}
-                className="absolute right-3 top-3 rounded-md bg-black/60 p-1 text-white hover:bg-black/80"
+                className="absolute right-3 top-3 rounded-md border border-border-soft bg-bg-main/80 p-1 text-text-main transition-colors hover:text-primary-300"
                 aria-label="Close preview"
               >
                 <X size={18} />

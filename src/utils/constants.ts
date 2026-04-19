@@ -24,7 +24,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'Skills', href: '#skills' },
   { label: 'Certifications', href: '#certifications' },
   { label: 'Projects', href: '#projects' },
-  { label: '42 Graph', href: '#holygraph' },
+  { label: '42 Journey', href: '#holygraph' },
   { label: 'Graduation', href: '#graduation' },
   { label: 'GitHub', href: '#github' },
   { label: 'Contact', href: '#contact' },
@@ -114,6 +114,14 @@ export const FEATURED_PROJECTS = [
       'An event-driven HTTP server in C++ built from scratch, featuring request parsing, static file serving, CGI support, file upload and deletion, and concurrent client handling using poll().',
     technologies: ['C++', 'HTTP', 'poll()', 'CGI', 'Sockets'],
     github: 'https://github.com/Qhatahet/WebServ',
+  },
+  {
+    title: 'Habit Tracker',
+    description:
+      'A habit tracking app focused on consistent daily progress, helping users build routines and monitor streaks through a simple, practical interface.',
+    technologies: ['React', 'TypeScript', 'Vite', 'CSS'],
+    github: 'https://habit-tracker-l8h2.vercel.app/',
+    linkLabel: 'Use Project',
   },
 ];
 
